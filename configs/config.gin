@@ -1,0 +1,26 @@
+# Architectures
+vgg_like.base_filters = 16
+vgg_like.n_blocks = (2,3)
+vgg_like.dense_units = 256
+vgg_like.dropout_rate = 0.5
+
+# Layers
+vgg_block.kernel_size = (3, 3)
+simple_convnet.kernel_size = (3, 3)
+
+# Training
+Trainer.total_steps = 7000
+Trainer.log_interval = 129
+Trainer.ckpt_interval = 129
+Trainer.learning_rate = 1e-3
+
+
+# Input pipeline
+load.name = 'idrid'
+load.data_dir = '/home/data/IDRID_dataset'
+preprocess.img_height = 256
+preprocess.img_width = 256
+transfer_learning_preprocess.img_height = 256
+transfer_learning_preprocess.img_width = 256
+prepare.batch_size = 32
+prepare.caching = False
